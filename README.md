@@ -2,7 +2,7 @@
 # Fluent (Dark) Theme for OBS Studio
 
 <p align="center">
-  <img src="images/WinUI%203%20Logo.png" width="300" style="border-radius: 8px;" alt="WinUI 3 Logo">
+  <img src="images/WinUI%203%20Logo.png" width="300" style="border-radius: 15px;" alt="WinUI 3 Logo">
 </p>
 
 A clean, modern, and dark-mode Fluent Design theme for OBS Studio, updated and rebuilt to be compatible with OBS Studio v28+ (including Qt6 support). This theme brings a Windows 11 / WinUI 3-inspired design style to your streaming setup with crisp custom icons, modern padding, and vibrant blue focus highlights.
