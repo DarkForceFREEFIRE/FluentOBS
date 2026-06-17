@@ -1,0 +1,145 @@
+
+@font-face {
+  font-family: 'Segoe UI Variable Text';
+  src: local('Segoe UI Variable Text'), local('Segoe UI'), url('res/segoeui.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Segoe Icons';
+  src: local('Segoe Icons'), url('res/SegoeIcons.ttf') format('truetype');
+}
+
+
+:root {
+  --bg-color: #fafafa;
+  --text-color: #1c1c1c;
+  --text-muted: #5f5f5f;
+  --card-bg: rgba(243, 243, 243, 0.7);
+  --border-color: rgba(0, 0, 0, 0.09);
+  --accent-color: #0078d4;
+  --accent-hover: #005a9e;
+  --accent-text: #ffffff;
+  --btn-secondary-bg: rgba(0, 0, 0, 0.03);
+  --btn-secondary-hover: rgba(0, 0, 0, 0.06);
+  --navbar-bg: rgba(243, 243, 243, 0.8);
+  --hero-glow: rgba(0, 120, 212, 0.08);
+  --window-bar-bg: #eaeaea;
+  --footer-bg: #f3f3f3;
+  
+  --icon-adaptive-filter: none;
+}
+
+.dark {
+  --bg-color: #090d16;
+  --text-color: #f3f3f3;
+  --text-muted: #a1a1aa;
+  --card-bg: rgba(19, 25, 38, 0.75);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --accent-color: #60cdff;
+  --accent-hover: #8bdaff;
+  --accent-text: #090d16;
+  --btn-secondary-bg: rgba(255, 255, 255, 0.05);
+  --btn-secondary-hover: rgba(255, 255, 255, 0.1);
+  --navbar-bg: rgba(9, 13, 22, 0.8);
+  --hero-glow: rgba(0, 120, 212, 0.2);
+  --window-bar-bg: #121622;
+  --footer-bg: #06090f;
+  
+  
+  --icon-adaptive-filter: invert(1);
+}
+
+.acrylic {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.icon-adaptive {
+  filter: var(--icon-adaptive-filter);
+  transition: filter 0.2s ease;
+}
+
+/* Colored Windows-style folder icon (gradient yellow) */
+.icon-folder {
+  display: inline-block;
+  background: linear-gradient(135deg, #ffd76b 0%, #ffb84d 50%, #ff9f00 100%);
+  /* Use explicit mask-image properties for broader browser support */
+  -webkit-mask-image: url('res/Folder.svg');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+
+  mask-image: url('res/Folder.svg');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+  background-size: contain;
+  background-position: center;
+}
+
+.winui-primary .icon-primary-btn {
+  filter: invert(1);
+}
+
+.dark .winui-primary .icon-primary-btn {
+  filter: none;
+}
+
+#star-icon {
+  filter: invert(80%) sepia(50%) saturate(1600%) hue-rotate(355deg) brightness(105%) contrast(105%);
+}
+
+.winui-btn {
+  position: relative;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.winui-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  border-top-color: rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+}
+
+.winui-btn:active {
+  transform: scale(0.98);
+}
+
+.winui-primary {
+  background: var(--accent-color);
+  color: var(--accent-text);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.winui-primary:hover {
+  background: var(--accent-hover);
+}
+
+.hero-glow {
+  box-shadow: 0 0 50px var(--hero-glow);
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin-slow 8s linear infinite;
+}

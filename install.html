@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Installation Guide - FluentOBS</title>
+  <link rel="icon" href="res/OBSLogo.png" sizes="32x32" type="image/png">
+  <link rel="shortcut icon" href="res/OBSLogo.png" type="image/png">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            fluentBg: 'var(--bg-color)',
+            fluentText: 'var(--text-color)',
+            fluentTextMuted: 'var(--text-muted)',
+            fluentCard: 'var(--card-bg)',
+            fluentBorder: 'var(--border-color)',
+            fluentAccent: 'var(--accent-color)',
+            fluentAccentHover: 'var(--accent-hover)',
+          },
+          fontFamily: {
+            sans: ['"Segoe UI Variable Text"', '"Segoe UI"', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['"Segoe UI Variable Display"', '"Segoe UI"', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+  
+  <script src="app.js" defer></script>
+</head>
+<body class="bg-fluentBg text-fluentText font-sans antialiased overflow-x-hidden selection:bg-blue-600/30 transition-colors duration-200">
+
+  <nav class="fixed top-0 w-full z-50 bg-[var(--navbar-bg)] backdrop-blur-xl border-b border-fluentBorder transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center font-display">
+      
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <img src="res/OBSLogo.png" alt="OBS Logo" class="w-6 h-6 object-contain">
+          <span class="text-fluentText font-semibold text-lg tracking-wide">FluentOBS</span>
+        </a>
+        <div class="w-px h-4 bg-fluentBorder ml-4 mr-2"></div>
+        <div class="flex gap-1">
+          <a href="index.html#features" class="px-3 py-1.5 rounded-md text-sm text-fluentTextMuted hover:text-fluentText hover:bg-white/5 transition-all">Features</a>
+          <a href="install.html" class="px-3 py-1.5 rounded-md text-sm text-fluentText hover:text-fluentText hover:bg-white/5 transition-all font-medium">Installation</a>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button id="theme-toggle" class="p-2 rounded-md hover:bg-white/5 text-fluentTextMuted hover:text-fluentText transition-colors duration-150 cursor-pointer" aria-label="Toggle Theme">
+          <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+          </svg>
+          <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+        </button>
+
+        <a href="https://github.com/DarkForceFREEFIRE/FluentOBS/releases/tag/Retail" target="_blank" rel="noopener noreferrer" class="winui-btn hidden sm:inline-flex items-center text-sm font-semibold border border-fluentBorder text-fluentText bg-black/5 py-1.5 px-4 rounded-md hover:bg-black/10 hover:border-black/20 transition-colors">
+          Download
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="max-w-4xl mx-auto px-6 pt-32 pb-8 text-center sm:text-left">
+    <h1 class="text-4xl sm:text-5xl font-semibold font-display text-fluentText tracking-tight mb-2">
+      Theme Installation Guide
+    </h1>
+    <p class="text-base sm:text-lg text-fluentTextMuted leading-relaxed">
+      Follow these simple steps to install and enable the Fluent (Dark) theme in OBS Studio.
+    </p>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-24">
+    <div class="space-y-8">
+      
+      <div class="acrylic p-6 sm:p-8 rounded-lg relative overflow-hidden">
+        <div class="flex flex-col sm:flex-row items-start gap-4">
+          <div class="w-8 h-8 rounded-full bg-transparent text-white flex items-center justify-center font-bold text-sm shrink-0 font-display shadow-md">
+            1
+          </div>
+          <div class="flex-1 w-full">
+            <h2 class="text-xl font-semibold text-fluentText mb-3 font-display">Prepare the Files</h2>
+            <p class="text-sm text-fluentTextMuted leading-relaxed mb-4">
+              Download the release package from the repository and extract the contents. Ensure you have the following file structure ready before moving them:
+            </p>
+            
+            <div class="bg-black/5 dark:bg-black/25 rounded-md p-4 border border-fluentBorder font-mono text-xs text-fluentTextMuted space-y-2 max-w-md select-none">
+              <div class="flex items-center gap-2">
+                <img src="res/Folder.svg" alt="Folder" class="w-4 h-4 icon-adaptive">
+                <span class="text-fluentText font-semibold">Your Extracted Folder</span>
+              </div>
+              <div class="pl-5 flex items-center gap-2">
+                <img src="res/Document.svg" alt="Document" class="w-4 h-4 icon-adaptive">
+                <span>fluentdark.obt</span> <span class="text-[10px] opacity-50">(Theme configuration)</span>
+              </div>
+              <div class="pl-5 flex items-center gap-2">
+                <img src="res/Document.svg" alt="Document" class="w-4 h-4 icon-adaptive">
+                <span>fluentdark.qss</span> <span class="text-[10px] opacity-50">(Styles and layouts)</span>
+              </div>
+              <div class="pl-5 flex items-center gap-2 text-fluentAccent">
+                <svg aria-hidden="true" class="w-4 h-4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img">
+                  <defs>
+                    <linearGradient id="folderGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#ffd76b" />
+                      <stop offset="50%" stop-color="#ffb84d" />
+                      <stop offset="100%" stop-color="#ff9f00" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M13.821 6.5h5.929a2.25 2.25 0 0 1 2.229 1.938l.016.158.005.154v9a2.25 2.25 0 0 1-2.096 2.245L19.75 20H4.25a2.25 2.25 0 0 1-2.245-2.096L2 17.75v-7.251l6.207.001.196-.009a2.25 2.25 0 0 0 1.088-.393l.156-.12L13.821 6.5ZM8.207 4c.46 0 .908.141 1.284.402l.156.12 2.103 1.751-3.063 2.553-.085.061a.75.75 0 0 1-.29.106L8.206 9 2 8.999V6.25a2.25 2.25 0 0 1 2.096-2.245L4.25 4h3.957Z" fill="url(#folderGrad)" />
+                </svg>
+                <span class="font-semibold">fluentdark</span> <span class="text-[10px] opacity-80">(Custom SVG assets folder)</span>
+              </div>
+            </div>
+
+            <div class="mt-4 border-l-4 border-amber-500 bg-amber-500/10 text-amber-800 dark:text-amber-200 p-4 rounded-md text-xs sm:text-sm leading-relaxed flex items-start gap-3">
+              <img src="res/Warning.webp" alt="Warning" class="w-5 h-5 shrink-0 object-contain">
+              <div>
+                <span class="font-bold">Important Folder Name Rule:</span> The assets folder <strong>must</strong> be named exactly <code class="bg-black/5 dark:bg-black/20 px-1.5 py-0.5 rounded font-mono text-xs">fluentdark</code> (all lowercase, no spaces). This ensures OBS Studio's internal resource paths can locate and load the custom icons.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acrylic p-6 sm:p-8 rounded-lg relative overflow-hidden">
+        <div class="flex flex-col sm:flex-row items-start gap-4">
+          <div class="w-8 h-8 rounded-full bg-transparent text-white flex items-center justify-center font-bold text-sm shrink-0 font-display shadow-md">
+            2
+          </div>
+          <div class="flex-1 w-full">
+            <h2 class="text-xl font-semibold text-fluentText mb-3 font-display">Move to Custom OBS Themes Directory</h2>
+            <p class="text-sm text-fluentTextMuted leading-relaxed mb-6">
+              Copy the configuration file, style sheet, and folder into your operating system's custom OBS themes directory:
+            </p>
+
+            <div class="flex p-1 bg-black/5 dark:bg-black/25 rounded-md border border-fluentBorder max-w-sm mb-6 font-display text-sm">
+              <button id="btn-win" class="flex-1 py-1.5 text-center font-medium rounded-sm transition-all focus:outline-none cursor-pointer bg-white dark:bg-gray-800 text-fluentText shadow-sm" onclick="switchOS('win')">
+                Windows
+              </button>
+              <button id="btn-mac" class="flex-1 py-1.5 text-center font-medium rounded-sm transition-all focus:outline-none cursor-pointer text-fluentTextMuted hover:text-fluentText" onclick="switchOS('mac')">
+                macOS
+              </button>
+              <button id="btn-linux" class="flex-1 py-1.5 text-center font-medium rounded-sm transition-all focus:outline-none cursor-pointer text-fluentTextMuted hover:text-fluentText" onclick="switchOS('linux')">
+                Linux
+              </button>
+            </div>
+
+            <div id="path-win" class="space-y-4">
+              <p class="text-sm text-fluentTextMuted leading-relaxed">
+                Press <kbd class="bg-black/10 dark:bg-white/10 px-1.5 py-0.5 rounded font-mono text-xs">Win + R</kbd>, paste the path below, and hit Enter. Move the files there:
+              </p>
+              <div class="relative bg-black/10 dark:bg-black/30 p-3.5 pr-28 rounded-md font-mono text-xs sm:text-sm border border-fluentBorder flex items-center justify-between overflow-x-auto">
+                <code id="code-win" class="text-fluentText select-all whitespace-nowrap">%appdata%\obs-studio\themes</code>
+                <button onclick="copyToClipboard('code-win', 'btn-copy-win')" id="btn-copy-win" class="absolute right-2 winui-btn py-1.5 px-3 bg-white/5 hover:bg-white/10 rounded-md text-xs font-semibold text-fluentText flex items-center gap-1.5">
+                  <img src="res/Copy.svg" alt="Copy" class="w-3.5 h-3.5 icon-adaptive">
+                  <span class="copy-text">Copy</span>
+                </button>
+              </div>
+              <p class="text-xs text-fluentTextMuted">
+                Alternative system-wide path
+              </p>
+              <div class="relative bg-black/10 dark:bg-black/30 p-3.5 pr-28 rounded-md font-mono text-xs sm:text-sm border border-fluentBorder flex items-center justify-between overflow-x-auto">
+                <code id="code-win1" class="text-fluentText select-all whitespace-nowrap">%programfiles%\obs-studio\data\obs-studio\themes\</code>
+                <button onclick="copyToClipboard('code-win1', 'btn-copy-win1')" id="btn-copy-win1" class="absolute right-2 winui-btn py-1.5 px-3 bg-white/5 hover:bg-white/10 rounded-md text-xs font-semibold text-fluentText flex items-center gap-1.5">
+                  <img src="res/Copy.svg" alt="Copy" class="w-3.5 h-3.5 icon-adaptive">
+                  <span class="copy-text">Copy</span>
+                </button>
+              </div>
+              
+            </div>
+
+            <div id="path-mac" class="space-y-4 hidden">
+              <p class="text-sm text-fluentTextMuted leading-relaxed">
+                Open Finder, press <kbd class="bg-black/10 dark:bg-white/10 px-1.5 py-0.5 rounded font-mono text-xs">Cmd + Shift + G</kbd>, paste the path below, and move your files there:
+              </p>
+              <div class="relative bg-black/10 dark:bg-black/30 p-3.5 pr-28 rounded-md font-mono text-xs sm:text-sm border border-fluentBorder flex items-center justify-between overflow-x-auto">
+                <code id="code-mac" class="text-fluentText select-all whitespace-nowrap">~/Library/Application Support/obs-studio/themes/</code>
+                <button onclick="copyToClipboard('code-mac', 'btn-copy-mac')" id="btn-copy-mac" class="absolute right-2 winui-btn py-1.5 px-3 bg-white/5 hover:bg-white/10 rounded-md text-xs font-semibold text-fluentText flex items-center gap-1.5">
+                  <img src="res/Copy.svg" alt="Copy" class="w-3.5 h-3.5 icon-adaptive">
+                  <span class="copy-text">Copy</span>
+                </button>
+              </div>
+            </div>
+
+            <div id="path-linux" class="space-y-6 hidden">
+              <div class="space-y-2">
+                <span class="text-xs font-semibold text-fluentAccent uppercase tracking-wide">Flatpak Installation:</span>
+                <div class="relative bg-black/10 dark:bg-black/30 p-3.5 pr-28 rounded-md font-mono text-xs sm:text-sm border border-fluentBorder flex items-center justify-between overflow-x-auto">
+                  <code id="code-linux-flat" class="text-fluentText select-all whitespace-nowrap">~/.var/app/com.obsproject.Studio/config/obs-studio/themes/</code>
+                  <button onclick="copyToClipboard('code-linux-flat', 'btn-copy-linux-flat')" id="btn-copy-linux-flat" class="absolute right-2 winui-btn py-1.5 px-3 bg-white/5 hover:bg-white/10 rounded-md text-xs font-semibold text-fluentText flex items-center gap-1.5">
+                    <img src="res/Copy.svg" alt="Copy" class="w-3.5 h-3.5 icon-adaptive">
+                    <span class="copy-text">Copy</span>
+                  </button>
+                </div>
+              </div>
+              
+              <div class="space-y-2">
+                <span class="text-xs font-semibold text-fluentAccent uppercase tracking-wide">Standard/Ubuntu/Native Installation:</span>
+                <div class="relative bg-black/10 dark:bg-black/30 p-3.5 pr-28 rounded-md font-mono text-xs sm:text-sm border border-fluentBorder flex items-center justify-between overflow-x-auto">
+                  <code id="code-linux-std" class="text-fluentText select-all whitespace-nowrap">~/.config/obs-studio/themes/</code>
+                  <button onclick="copyToClipboard('code-linux-std', 'btn-copy-linux-std')" id="btn-copy-linux-std" class="absolute right-2 winui-btn py-1.5 px-3 bg-white/5 hover:bg-white/10 rounded-md text-xs font-semibold text-fluentText flex items-center gap-1.5">
+                    <img src="res/Copy.svg" alt="Copy" class="w-3.5 h-3.5 icon-adaptive">
+                    <span class="copy-text">Copy</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="acrylic p-6 sm:p-8 rounded-lg relative overflow-hidden">
+        <div class="flex flex-col sm:flex-row items-start gap-4">
+          <div class="w-8 h-8 rounded-full bg-transparent text-white flex items-center justify-center font-bold text-sm shrink-0 font-display shadow-md">
+            3
+          </div>
+          <div class="flex-1 w-full">
+            <h2 class="text-xl font-semibold text-fluentText mb-3 font-display">Enable the Theme inside OBS</h2>
+            <p class="text-sm text-fluentTextMuted leading-relaxed mb-4">
+              Apply the layout inside your OBS Settings panel:
+            </p>
+            
+            <ul class="space-y-3 text-sm text-fluentText mb-6">
+              <li class="flex items-center gap-2.5">
+                <img src="res/Check.svg" alt="OBS Icon Step" class="w-4 h-4 object-contain opacity-80 shrink-0">
+                <span>Open <span class="font-semibold text-fluentText">OBS Studio</span> on your desktop.</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <img src="res/Check.svg" alt="Gear Icon Step" class="w-4 h-4 object-contain opacity-80 shrink-0">
+                <span>Go to <span class="font-semibold text-fluentText">Settings</span> &gt; <span class="font-semibold text-fluentText">General</span>.</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <img src="res/Check.svg" alt="Palette Icon Step" class="w-4 h-4 object-contain opacity-80 shrink-0">
+                <span>Locate the <span class="font-semibold text-fluentText">Theme</span> dropdown setting at the top.</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <img src="res/Check.svg" alt="Apply Icon Step" class="w-4 h-4 object-contain opacity-80 shrink-0">
+                <span>Choose <span class="text-fluentAccent font-semibold">Fluent (Dark)</span> from the list.</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <img src="res/Check.svg" alt="Confirm Icon Step" class="w-4 h-4 object-contain opacity-80 shrink-0">
+                <span>Click <span class="font-semibold text-fluentText">Apply</span>, then click <span class="font-semibold text-fluentText">OK</span> to save.</span>
+              </li>
+            </ul>
+            
+            <div class="pt-2">
+              <a href="index.html" class="inline-flex items-center text-sm font-semibold text-fluentAccent hover:underline transition gap-1">
+                ← Return to homepage
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-fluentBorder py-12 bg-[var(--footer-bg)] text-sm text-fluentTextMuted transition-all duration-200">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-2">
+        <img src="res/OBSLogo.png" alt="OBS Logo Footer" class="w-5 h-5 object-contain">
+        <span class="text-fluentText font-semibold font-display">FluentOBS</span>
+        <span class="text-xs">&copy; 2026. Open-source under MIT.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchOS(os) {
+      document.getElementById('path-win').classList.add('hidden');
+      document.getElementById('path-mac').classList.add('hidden');
+      document.getElementById('path-linux').classList.add('hidden');
+      
+      const buttons = ['btn-win', 'btn-mac', 'btn-linux'];
+      buttons.forEach(id => {
+        const btn = document.getElementById(id);
+        btn.className = "flex-1 py-1.5 text-center font-medium rounded-sm transition-all focus:outline-none cursor-pointer text-fluentTextMuted hover:text-fluentText";
+      });
+
+      document.getElementById('path-' + os).classList.remove('hidden');
+
+      const activeBtn = document.getElementById('btn-' + os);
+      activeBtn.className = "flex-1 py-1.5 text-center font-medium rounded-sm transition-all focus:outline-none cursor-pointer bg-white dark:bg-gray-800 text-fluentText shadow-sm";
+    }
+
+    function copyToClipboard(codeId, buttonId) {
+      const codeElement = document.getElementById(codeId);
+      const buttonElement = document.getElementById(buttonId);
+      const textSpan = buttonElement.querySelector('.copy-text');
+      
+      navigator.clipboard.writeText(codeElement.innerText).then(() => {
+        const originalText = textSpan.innerText;
+        textSpan.innerText = "Copied!";
+        buttonElement.classList.add('text-blue-500');
+        
+        setTimeout(() => {
+          textSpan.innerText = originalText;
+          buttonElement.classList.remove('text-blue-500');
+        }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>

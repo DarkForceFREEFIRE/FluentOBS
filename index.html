@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FluentOBS - The Modern Fluent 2 Theme for OBS Studio</title>
+  <link rel="icon" href="res/OBSLogo.png" sizes="32x32" type="image/png">
+  <link rel="shortcut icon" href="res/OBSLogo.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            fluentBg: 'var(--bg-color)',
+            fluentText: 'var(--text-color)',
+            fluentTextMuted: 'var(--text-muted)',
+            fluentCard: 'var(--card-bg)',
+            fluentBorder: 'var(--border-color)',
+            fluentAccent: 'var(--accent-color)',
+            fluentAccentHover: 'var(--accent-hover)',
+          },
+          fontFamily: {
+            sans: ['"Segoe UI Variable Text"', '"Segoe UI"', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['"Segoe UI Variable Display"', '"Segoe UI"', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="bg-fluentBg text-fluentText font-sans antialiased overflow-x-hidden selection:bg-blue-600/30 transition-colors duration-200">
+
+  <nav class="fixed top-0 w-full z-50 bg-[var(--navbar-bg)] backdrop-blur-xl border-b border-fluentBorder transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center font-display">
+      
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2">
+          <img src="res/OBSLogo.png" alt="OBS Logo" class="w-6 h-6 object-contain">
+          <span class="text-fluentText font-semibold text-lg tracking-wide">FluentOBS</span>
+        </div>
+        <div class="w-px h-4 bg-fluentBorder ml-4 mr-2"></div>
+          <div class="hidden md:flex gap-1">
+            <a href="#features" class="px-3 py-1.5 rounded-md text-sm text-fluentTextMuted hover:text-fluentText hover:bg-white/5 transition-all">Features</a>
+            <a href="install.html" class="px-3 py-1.5 rounded-md text-sm text-fluentTextMuted hover:text-fluentText hover:bg-white/5 transition-all">Installation</a>
+          </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button id="theme-toggle" class="p-2 rounded-md hover:bg-white/5 text-fluentTextMuted hover:text-fluentText transition-colors duration-150 cursor-pointer" aria-label="Toggle Theme">
+          <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+          </svg>
+          <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+        </button>
+
+        <a href="https://github.com/DarkForceFREEFIRE/FluentOBS/releases/tag/Retail" target="_blank" rel="noopener noreferrer" class="winui-btn hidden sm:inline-flex items-center text-sm font-semibold border border-fluentBorder text-fluentText bg-black/5 py-1.5 px-4 rounded-md hover:bg-black/10 hover:border-black/20 transition-colors">
+          Download
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="relative overflow-hidden pt-32 pb-16 sm:pt-40 lg:pb-24">
+    <div class="absolute inset-0 z-0 pointer-events-none opacity-30">
+      <svg class="w-full h-full" viewBox="0 0 1000 500" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="glow-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0078d4" stop-opacity="0.3"></stop>
+            <stop offset="50%" stop-color="#60cdff" stop-opacity="0.1"></stop>
+            <stop offset="100%" stop-color="#090d16" stop-opacity="0"></stop>
+          </linearGradient>
+        </defs>
+        <path d="M0,150 Q250,50 500,150 T1000,150 L1000,500 L0,500 Z" fill="url(#glow-grad)"></path>
+        <path d="M0,220 C250,120 450,320 1000,220" fill="none" stroke="rgba(96, 205, 255, 0.15)" stroke-width="1.5"></path>
+        <path d="M0,240 C300,180 600,280 1000,180" fill="none" stroke="rgba(0, 120, 212, 0.1)" stroke-width="1"></path>
+      </svg>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      
+      <div class="flex justify-center mb-6">
+        <img src="res/OBSLogo.png" alt="OBS Logo Header" class="w-16 h-16 object-contain">
+      </div>
+
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-semibold font-display text-fluentText tracking-tight mb-4">
+        FluentOBS
+      </h1>
+      <p class="text-lg sm:text-xl text-fluentTextMuted max-w-2xl mx-auto leading-relaxed mb-8">
+        The modern, open source theme designed for OBS Studio. <br class="hidden sm:inline">
+        Bringing Fluent 2 and WinUI 3 principles directly to your streaming suite.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
+        <a id="download" href="https://github.com/DarkForceFREEFIRE/FluentOBS/releases/tag/Retail" target="_blank" rel="noopener noreferrer" class="winui-btn winui-primary inline-flex items-center gap-3 rounded-md px-6 py-2.5 text-sm font-semibold w-full sm:w-auto justify-center">
+          <img src="res/Download.svg" id="download-icon" alt="Download" class="w-4 h-4 icon-primary-btn">
+          <div class="text-left leading-none">
+            <span class="block font-semibold">Download</span>
+            <span class="text-[10px] opacity-80 font-normal">For OBS Studio</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/DarkForceFREEFIRE/FluentOBS" target="_blank" rel="noopener noreferrer" class="winui-btn inline-flex items-center gap-3 bg-[var(--btn-secondary-bg)] hover:bg-[var(--btn-secondary-hover)] text-fluentText border border-fluentBorder rounded-md px-6 py-2.5 text-sm font-semibold w-full sm:w-auto justify-center">
+          <img src="res/GitHub_Invertocat_Black.svg" id="github-icon" alt="GitHub" class="w-5 h-5 icon-adaptive">
+          <div class="text-left leading-none">
+            <span class="block font-semibold">View on GitHub</span>
+            <span class="text-[10px] text-fluentTextMuted font-normal">Open source</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-12 text-sm text-fluentTextMuted">
+        <div class="inline-flex items-center gap-1.5 bg-white/5 border border-fluentBorder rounded-full px-4 py-1">
+          <img src="res/Star.svg" id="star-icon" alt="Star" class="w-3.5 h-3.5">
+          <span class="font-semibold text-fluentText">0.0</span>
+          <span class="text-xs opacity-60">Rating</span>
+        </div>
+
+        <div class="inline-flex items-center gap-1.5 bg-white/5 border border-fluentBorder rounded-full px-4 py-1">
+          <img src="res/Download.svg" id="stats-download-icon" alt="Downloads" class="w-3.5 h-3.5 opacity-70 icon-adaptive">
+          <span class="font-semibold text-fluentText">N+</span>
+          <span class="text-xs opacity-60">Downloads</span>
+        </div>
+        <div class="inline-flex items-center bg-white/5 border border-fluentBorder rounded-full px-4 py-1 text-xs">
+          Free & Open Source
+        </div>
+      </div>
+
+      <div class="max-w-4xl mx-auto relative rounded-xl overflow-hidden border border-fluentBorder hero-glow transition-all duration-200">
+
+        <div class="bg-[var(--window-bar-bg)] px-4 py-2 border-b border-fluentBorder flex items-center justify-between text-xs text-fluentTextMuted transition-colors duration-200">
+          <span class="font-medium tracking-wide">OBS Studio - Fluent Theme Preview</span>
+          <div class="flex gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-white/10 inline-block border border-white/5"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-white/10 inline-block border border-white/5"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-white/10 inline-block border border-white/5"></span>
+          </div>
+        </div>
+        
+        <div class="bg-[#131926]">
+          <img src="res/Screenshot.png" alt="Fluent OBS Theme Screenshot Preview" class="w-full object-cover">
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  
+  <section id="features" class="py-20 border-t border-fluentBorder bg-white/[0.01]">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <div class="acrylic p-6 rounded-lg flex flex-col items-start">
+          <img src="res/Pallatte.webp" alt="Palette Icon" class="w-12 h-12 mb-4 object-contain">
+          <h3 class="text-lg font-semibold text-fluentText mb-2 font-display">WunUI 3</h3>
+          <p class="text-sm text-fluentTextMuted leading-relaxed">
+            Beautiful layouts aligned directly with modern Windows 11 aesthetics, using correct contrast ratios, rounded controls, and clean panel structures.
+          </p>
+        </div>
+
+        <div class="acrylic p-6 rounded-lg flex flex-col items-start">
+          <img src="res/Rocket.webp" alt="Rocket Icon" class="w-12 h-12 mb-4 object-contain">
+          <h3 class="text-lg font-semibold text-fluentText mb-2 font-display">Zero Overhead</h3>
+          <p class="text-sm text-fluentTextMuted leading-relaxed">
+            Super lightweight design optimized to run efficiently on your CPU and GPU. Minimal rendering overhead so your streams stay smooth.
+          </p>
+        </div>
+
+        <div class="acrylic p-6 rounded-lg flex flex-col items-start">
+          <img src="res/Gear.webp" alt="Gear Icon" class="w-12 h-12 mb-4 object-contain spin">
+          <h3 class="text-lg font-semibold text-fluentText mb-2 font-display">Deep Customization</h3>
+          <p class="text-sm text-fluentTextMuted leading-relaxed">
+            Supports modular layout arrangements, custom sidebar styles, and accent colors to make your broadcasting workflow look exactly as you prefer.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-fluentBorder py-12 bg-[var(--footer-bg)] text-sm text-fluentTextMuted transition-all duration-200">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-2">
+        <img src="res/OBSLogo.png" alt="OBS Logo Footer" class="w-5 h-5 object-contain">
+        <span class="text-fluentText font-semibold font-display">FluentOBS</span>
+        <span class="text-xs">&copy; 2026. Open-source under MIT.</span>
+      </div>
+      <!-- <div class="flex gap-4">
+        <a href="#" class="hover:text-fluentText transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-fluentText transition-colors">GitHub</a>
+      </div> -->
+    </div>
+  </footer>
+
+</body>
+</html>
